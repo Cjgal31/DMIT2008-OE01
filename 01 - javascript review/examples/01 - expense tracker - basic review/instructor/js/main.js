@@ -92,3 +92,21 @@ searchBox.addEventListener(
     renderExpenses(filteredExpenses);
   }
 );
+
+// 7. let's handle editing/deleting
+// I only need one click listener for the whole card container; I can just narrow down later
+// specifically what got clicked.
+expenseContainer.addEventListener(
+  "click",
+  function(event) {
+    // event.target will be *exactly* what got clicked within the expense container, not just
+    // "always the container itself"
+    if (event.target.classList.contains("delete-btn")) {
+      // delete the element from the expenses array (somehow getting the right one)
+      // then, re-render
+    } else if (event.target.classList.contains("edit-btn")) {
+      // populate the form inputs w/ data from the element/card
+      // somehow figure out a way to save back to that element/card instead of creating a new one
+    }
+  }
+);
