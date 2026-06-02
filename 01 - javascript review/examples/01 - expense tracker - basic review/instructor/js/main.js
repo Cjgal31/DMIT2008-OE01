@@ -25,7 +25,7 @@ function renderExpenses(expenseData) {
             <div class="title">${expense.title}</div>
             <div class="meta category">${expense.category}</div>
           </div>
-          <div class="amount">${expense.amount}</div>
+          <div class="amount">$${expense.amount}</div>
         </div>
         <div class="meta date">${expense.date}</div>
         <div class="actions">
