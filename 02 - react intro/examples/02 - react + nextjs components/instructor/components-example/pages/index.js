@@ -6,8 +6,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
 // my components
-import Hello from '../components/Hello';
-import NewConcept from '../components/NewConcept';
+import Hello from '@/components/Hello';
+import NewConcept from '@/components/NewConcept';
+// @ is the project root (see: jsonfig.json), so we don't have to write long annoying import paths
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +37,8 @@ export default function Home() {
         <main className={styles.main}>
           <Hello />
           <NewConcept concept="creating and using components" />
+          <NewConcept concept="destructuring objects" />
+          <NewConcept concept="next.js and what it bundles & does" />     
         </main>
       </div>
     </>
