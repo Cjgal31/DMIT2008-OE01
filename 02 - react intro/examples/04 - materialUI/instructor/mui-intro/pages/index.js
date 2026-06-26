@@ -2,6 +2,7 @@ import Head from "next/head";
 
 // MUI components
 import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 
 export default function Home() {
@@ -14,8 +15,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Container maxWidth="md" style={{ background: '#cccccc' }}>
-          some content we'll add later
+        <Container maxWidth="md" sx={{ background: '#cccccc' }}>
+          <Box sx={{ my: 4 }}>
+            some content we'll add later
+          </Box>
         </Container>
       </main>
     </>
