@@ -3,6 +3,8 @@
 
 import { useState } from 'react';
 
+import Grid from '@mui/material/Grid';
+
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
@@ -23,22 +25,32 @@ export default function TodoList() {
   }
 
   return (
-    <>
-      <TextField
-        id="standard-basic"
-        label="New todo item"
-        variant="standard"
-        sx={{ width: '75%' }}
-        value={todoItem}
-        onChange={onTodoTextChange}
-      />
-      <Button
-        variant="contained"
-        onClick={onAddTodoClick}
-      >
-        Add Todo Item
-      </Button>
-    </>
+      <Grid container spacing={2} sx={{ my: 4 }}>
+
+        <Grid size={10}>
+          {/* Most front-end frameworks use a 12-columnd grid (convenient lowest-common mulitple),
+              so something being "12 columns wide" means it takes up the whole row.
+          */}
+          <TextField
+            id="standard-basic"
+            label="New todo item"
+            variant="standard"
+            sx={{ width: '100%' }}
+            value={todoItem}
+            onChange={onTodoTextChange}
+          />
+        </Grid>
+
+        <Grid size={2}>
+          <Button
+            variant="contained"
+            onClick={onAddTodoClick}
+          >
+            Add Todo Item
+          </Button>
+        </Grid>
+
+      </Grid>
   )
 
 }
