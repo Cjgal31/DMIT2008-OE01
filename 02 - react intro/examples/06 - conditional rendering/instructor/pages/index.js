@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { MOVIE_LIST } from '../utils/movies'
 
 import Head from 'next/head'
@@ -15,7 +17,14 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 
+// NOTE: This is using old MUI syntax, just so you're exposed to both syntax styles
+// in case you end up working in React on the job.
+
 export default function Home() {
+
+  const [searchTitle, setSearchTitle] = useState("");
+  const [searchYear, setSearchYear] = useState("");
+
   return (
     <div>
       <Head>
@@ -40,6 +49,8 @@ export default function Home() {
                   id="search-field"
                   label="search..."
                   variant="standard"
+                  value={searchTitle}
+                  onChange={(e) => {setSearchTitle(e.target.value)}}
                   sx={{width: '100%'}}
                   
                 />
@@ -49,6 +60,8 @@ export default function Home() {
                   id="year-field"
                   label="year"
                   variant="standard"
+                  value={searchYear}
+                  onChange={(e) => {setSearchYear(e.target.value)}}
                   sx={{width: '100%'}}
                  
                 />
