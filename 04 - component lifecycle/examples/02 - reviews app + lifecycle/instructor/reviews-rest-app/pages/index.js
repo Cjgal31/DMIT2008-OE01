@@ -39,6 +39,20 @@ export default function Home() {
     [] // param2: the dependency array ('when' should the effect fire? here, when component mounts)
   )
 
+  useEffect(() => {
+    console.log(reviews),
+    [reviews]
+  })
+
+
+  const deleteReviewItem = (deleteReviewId) => {
+    let prunedReviews = reviews.filter(
+      (review) => { return review.id !== deleteReviewId }
+    );
+    setReviews(prunedReviews);
+  }
+
+
   return (
     <div>
       <Head>
@@ -71,9 +85,11 @@ export default function Home() {
           {reviews.map((adaptation, index) => {
             return <ReviewCard
               key={index}
+              id={adaptation.id}
               rating={adaptation.rating}
               title={adaptation.title}
               comment={adaptation.comment}
+              deleteCallback={deleteReviewItem}
             />
           })}
 

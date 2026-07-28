@@ -10,7 +10,13 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 
 
-export default function ReviewCard({ rating, title, comment }) {
+export default function ReviewCard({
+  id,
+  rating,
+  title,
+  comment,
+  deleteCallback
+}) {
 
   const getRatingColour = (rating) => {
 
@@ -36,6 +42,12 @@ export default function ReviewCard({ rating, title, comment }) {
     return colour.display
   }
   
+
+  const deleteReviewHandler = (reviewId) => {
+    console.log(`deleting ${reviewId}`);
+    deleteCallback(id);
+  }
+
   return (
     <Card sx={{ mt: 3 }}>
       <CardHeader
@@ -46,7 +58,9 @@ export default function ReviewCard({ rating, title, comment }) {
         }
 
         action={
-          <IconButton>
+          <IconButton onClick={
+            () => { deleteReviewHandler(id); }
+          }>
             <DeleteIcon />
           </IconButton>
         }
