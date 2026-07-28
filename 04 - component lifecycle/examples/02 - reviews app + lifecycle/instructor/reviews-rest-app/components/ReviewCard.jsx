@@ -1,4 +1,4 @@
-import { deleteReviewItem } from '../api/reviews';
+import { deleteReview } from '../utils/api/reviews';
 
 import Avatar from '@mui/material/Avatar';
 

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 // API functions
-import { getReviews } from './api/reviews';
+import { getReviews } from '../utils/api/reviews';
 
 // nextjs components
 import Head from 'next/head'
@@ -16,8 +16,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 // our own components
-import ReviewCard from './components/ReviewCard';
-import ReviewForm from './components/ReviewForm'
+import ReviewCard from '../components/ReviewCard';
+import ReviewForm from '../components/ReviewForm'
 
 
 export default function Home() {
