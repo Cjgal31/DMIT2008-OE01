@@ -1,3 +1,5 @@
+import { deleteReviewItem } from '../api/reviews';
+
 import Avatar from '@mui/material/Avatar';
 
 import Card from '@mui/material/Card';
@@ -45,7 +47,10 @@ export default function ReviewCard({
 
   const deleteReviewHandler = (reviewId) => {
     console.log(`deleting ${reviewId}`);
-    deleteCallback(id);
+    // API delete is still async/non-obstructing; they're just automated together now
+    deleteReviewItem(reviewId).then(
+      (data) => { deleteCallback(id) }
+    )
   }
 
   return (

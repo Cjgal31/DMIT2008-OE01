@@ -42,3 +42,14 @@ export const addReview = ({ title, comment, rating }) => {
     return Promise.resolve(data)
   })
 }
+
+
+export const deleteReviewItem = (id) => {
+  return fetch(`${BASE_URL}/reviews/${id}/`, {
+    method: "DELETE"
+  }).then((response)=> {
+    return response.json()
+  }).then((data)=> {
+    return Promise.resolve(data)
+  })
+}
